@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h2>Visualizations</h2>
+
+    <span class="item-rel" th:each="img: ${classifier.imagePaths}">
+        <div th:text="${#strings.substringBefore(img, '.')}"></div>
+        <img th:src="@{/images/{classifierName}/{imageName}(imageName=${img}, classifierName=${classifier.getName()})}" alt="Image" />
+    </span>
+</div>
+<div>
+    <ul id="nav">
+        <li><a href="/">Home</a></li>
+    </ul>
+</div>
+</body>
+</html>

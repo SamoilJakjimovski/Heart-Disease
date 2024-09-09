@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <ul id="nav">
+        <li><a href="/">Home</a></li>
+    </ul>
+</div>
+<div>
+    <h2>Medical data</h2>
+
+    <span class="item-rel" th:each="img: ${imagePaths}">
+        <div th:text="${#strings.substringBefore(img, '.')}"></div>
+        <img th:src="@{/images/dataset/{imageName}(imageName=${img})}" alt="Image" />
+    </span>
+</div>
+
+</body>
+</html>
